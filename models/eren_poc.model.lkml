@@ -32,6 +32,11 @@ explore: order_data {
     relationship: many_to_one
     sql_on: ${order_data.sku}=${products.sku} and ${order_data.base_code}=${products.base_code};;
   }
-}
 
-explore: vw_order_data {}
+  join:d_city {
+    relationship: one_to_one
+    sql_on: ${d_city.order_data_city}=${order_data.city} ;;
+  }
+
+
+}
