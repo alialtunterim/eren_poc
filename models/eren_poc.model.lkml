@@ -30,7 +30,7 @@ persist_with: eren_poc_default_datagroup
 explore: order_data {
   join: products {
     relationship: many_to_one
-    sql_on: ${order_data.sku}=${products.sku} ;;
+    sql_on: ${order_data.sku}=${products.sku} and ${order_data.base_code}=${products.base_code};;
   }
 }
 
