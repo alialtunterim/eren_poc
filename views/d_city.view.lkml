@@ -28,6 +28,14 @@ view: d_city {
     type: string
     sql: ${TABLE}.ORDER_DATA_CITY ;;
   }
+
+  dimension: city_lat_long {
+    type: location
+    sql_latitude: ${latitude} ;;
+    sql_longitude: ${longitude} ;;
+    suggest_dimension: order_data_city
+  }
+
   measure: count {
     type: count
   }
