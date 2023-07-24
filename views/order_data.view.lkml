@@ -34,6 +34,7 @@ view: order_data {
   dimension: brand {
     type: string
     sql: ${TABLE}.Brand ;;
+    drill_fields: [kategori,products.name]
   }
 
   measure: cancel_refund_amount {
