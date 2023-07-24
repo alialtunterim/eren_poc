@@ -27,6 +27,11 @@ persist_with: eren_poc_default_datagroup
 # Typically, join parameters require that you define the join type, join relationship, and a sql_on clause.
 # Each joined view also needs to define a primary key.
 
-explore: order_data {}
+explore: order_data {
+  join: products {
+    relationship: many_to_one
+    sql_on: ${order_data.sku}=${products.sku} ;;
+  }
+}
 
 explore: vw_order_data {}
