@@ -34,7 +34,7 @@ view: order_data {
   dimension: brand {
     type: string
     sql: ${TABLE}.Brand ;;
-    drill_fields: [kategori,products.name]
+    drill_fields: [kategori,products.name,gender]
   }
 
   measure: cancel_refund_amount {
@@ -82,7 +82,13 @@ view: order_data {
   dimension: city {
     type: string
     sql: ${TABLE}.City ;;
-    drill_fields: [township,brand,kategori,alt_grup,gender]
+    #drill_fields: [township,brand,kategori,alt_grup,gender]
+
+    link: {
+      label: "Şehir Bazında Satışlar"
+      url: "https://komtas.cloud.looker.com/dashboards/105?%C5%9Eehir={{ value }}"
+    }
+
   }
 
 
@@ -134,6 +140,7 @@ view: order_data {
   dimension: kategori {
     type: string
     sql: ${TABLE}.Kategori ;;
+    drill_fields: [brand,products.name]
   }
 
   dimension: last_name {
@@ -172,7 +179,7 @@ view: order_data {
 
   dimension_group: order_date {
     type: time
-    timeframes: [raw, date, week, month, quarter, year]
+    timeframes: [raw, date, week, month, month_name, quarter, year]
     convert_tz: no
     datatype: date
     sql: ${TABLE}.OrderDate ;;
