@@ -35,6 +35,17 @@ view: order_data {
     type: string
     sql: ${TABLE}.Brand ;;
     drill_fields: [kategori,products.name,gender]
+
+    link: {
+      label: "Marka Bazlı Detay"
+      url: "https://komtas.cloud.looker.com/dashboards/106?Marka={{ value }}"
+    }
+
+    link: {
+      label: "Google Search"
+      url: "http://www.google.com/search?q={{ value }}"
+    }
+
   }
 
   measure: cancel_refund_amount {
@@ -88,7 +99,6 @@ view: order_data {
       label: "Şehir Bazında Satışlar"
       url: "https://komtas.cloud.looker.com/dashboards/105?%C5%9Eehir={{ value }}"
     }
-
   }
 
 
