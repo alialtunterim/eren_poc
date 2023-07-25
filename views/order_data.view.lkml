@@ -82,7 +82,9 @@ view: order_data {
   dimension: city {
     type: string
     sql: ${TABLE}.City ;;
+    drill_fields: [township,brand,kategori,alt_grup,gender]
   }
+
 
   dimension: color {
     type: string
