@@ -45,7 +45,6 @@ view: order_data {
       label: "Google Search"
       url: "http://www.google.com/search?q={{ value }}"
     }
-
   }
 
   measure: cancel_refund_amount {
@@ -100,7 +99,6 @@ view: order_data {
       url: "https://komtas.cloud.looker.com/dashboards/105?%C5%9Eehir={{ value }}"
     }
   }
-
 
   dimension: color {
     type: string
