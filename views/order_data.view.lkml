@@ -159,6 +159,7 @@ view: order_data {
   dimension: member {
     type: string
     sql: ${TABLE}.Member ;;
+    drill_fields: [gold_vip_status]
   }
 
   dimension: membership_buyer_type {
