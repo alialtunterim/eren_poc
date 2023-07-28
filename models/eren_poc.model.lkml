@@ -28,16 +28,24 @@ persist_with: eren_poc_default_datagroup
 # Each joined view also needs to define a primary key.
 
 explore: order_data {
-  label: "POC Model"
+  label: "Eren Sipariş Datası"
   join: products {
     relationship: many_to_one
     sql_on: ${order_data.sku}=${products.sku} and ${order_data.base_code}=${products.base_code};;
   }
 
   join:d_city {
-    relationship: one_to_one
+    relationship: many_to_one
     sql_on: ${d_city.order_data_city}=${order_data.city} ;;
   }
 
+  join: d_township {
+    relationship: many_to_one
+    sql_on: ${d_township.township}=${order_data.township};;
+  }
 
+}
+
+explore: customer_data {
+  label: "Eren Müşteri Datası"
 }

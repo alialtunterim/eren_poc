@@ -95,8 +95,13 @@ view: order_data {
     #drill_fields: [township,brand,kategori,alt_grup,gender]
 
     link: {
-      label: "Şehir Bazında Satışlar"
+      label: "Şehir Bazlı Detay"
       url: "https://komtas.cloud.looker.com/dashboards/105?%C5%9Eehir={{ value }}"
+    }
+
+    link: {
+      label: "Kargo Detay"
+      url: "https://komtas.cloud.looker.com/dashboards/109?%C5%9Eehir={{ value }}"
     }
   }
 
@@ -298,6 +303,7 @@ view: order_data {
     type: string
     sql: ${TABLE}.Township ;;
   }
+
   measure: count {
     type: count
     drill_fields: [last_name, first_name]
