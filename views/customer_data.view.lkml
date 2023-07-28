@@ -39,6 +39,12 @@ view: customer_data {
   dimension: mail {
     type: string
     sql: ${TABLE}.Mail ;;
+
+    link: {
+      label: "Müşteri Detay"
+      url: "https://komtas.cloud.looker.com/dashboards/111?Mail= {{ value }}"
+    }
+
   }
 
   dimension: membership_buyer_type {

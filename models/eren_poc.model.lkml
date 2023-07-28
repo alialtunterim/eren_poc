@@ -48,4 +48,8 @@ explore: order_data {
 
 explore: customer_data {
   label: "Eren Müşteri Datası"
+  join: order_data {
+    relationship: one_to_many
+    sql_on: ${customer_data.mail}=${order_data.email} ;;
+  }
 }

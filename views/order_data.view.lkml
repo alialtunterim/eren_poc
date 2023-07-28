@@ -173,6 +173,7 @@ view: order_data {
   }
 
   measure: net_amount {
+    label: "Satış Tutarı"
     type: sum
     value_format: "#,##0"
     sql: ${TABLE}.Net_Amount ;;
@@ -200,6 +201,7 @@ view: order_data {
   }
 
   measure: order_item_count {
+    label: "Sipariş Miktarı"
     type: sum
     sql: ${TABLE}.OrderItemCount ;;
   }
@@ -300,6 +302,7 @@ view: order_data {
   }
 
   dimension: township {
+    label: "İlçe"
     type: string
     sql: ${TABLE}.Township ;;
   }
