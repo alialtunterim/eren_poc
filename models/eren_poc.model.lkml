@@ -78,3 +78,11 @@ explore: c_customers {
   }
 
 }
+
+explore: c_offline_sales {
+  label: "Offline Data"
+}
+
+explore: c_orders {
+  label: "Online Data"
+}

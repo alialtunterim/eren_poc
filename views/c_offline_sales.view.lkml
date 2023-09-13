@@ -42,9 +42,7 @@ view: c_offline_sales {
 
   measure: total_kdv_dahil_tutar {
     type: sum
-    sql: ${kdv_dahil_tutar} ;;  }
-  measure: average_kdv_dahil_tutar {
-    type: average
+    value_format: "#,##0"
     sql: ${kdv_dahil_tutar} ;;  }
 
   dimension: magaza_adi {
