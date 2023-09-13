@@ -53,3 +53,28 @@ explore: customer_data {
     sql_on: ${customer_data.mail}=${order_data.email} ;;
   }
 }
+
+explore: c_customers {
+  label: "Eren Converse Data"
+
+  join: c_orders {
+    relationship: one_to_many
+    sql_on: ${c_customers.pk} = ${c_orders.customer} ;;
+  }
+
+  join: c_offline_sales {
+    relationship: one_to_many
+    sql_on: ${c_offline_sales.sap_cust_id} = ${c_customers.customer_id} ;;
+  }
+
+  join: c_order_items {
+    relationship: one_to_many
+    sql_on: ${c_order_items.pk} = ${c_orders.pk} ;;
+  }
+
+  join: c_products {
+    relationship: many_to_one
+    sql_on: ${c_products.pk} = ${c_order_items.product};;
+  }
+
+}

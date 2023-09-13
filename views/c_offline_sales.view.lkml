@@ -1,8 +1,8 @@
-# The name of this view in Looker is "Offline Sales Copy"
-view: offline_sales_copy {
+# The name of this view in Looker is "C Offline Sales"
+view: c_offline_sales {
   # The sql_table_name parameter indicates the underlying database table
   # to be used for all fields in this view.
-  sql_table_name: `occasion-364007.looker_poc.OfflineSales_copy` ;;
+  sql_table_name: `occasion-364007.looker_poc.c_OfflineSales` ;;
 
   # No primary key is defined for this view. In order to join this view in an Explore,
   # define primary_key: yes on a dimension that has no repeated values.
@@ -74,7 +74,7 @@ view: offline_sales_copy {
 
   dimension: sap_cust_id {
     type: number
-    sql: ${TABLE}.SAP_CUST_ID ;;
+    sql: CAST (${TABLE}.SAP_CUST_ID AS INT64);;
   }
 
   dimension: segment1 {

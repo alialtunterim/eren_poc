@@ -1,8 +1,8 @@
-# The name of this view in Looker is "Orders"
-view: orders {
+# The name of this view in Looker is "C Orders"
+view: c_orders {
   # The sql_table_name parameter indicates the underlying database table
   # to be used for all fields in this view.
-  sql_table_name: `occasion-364007.omnitron.orders` ;;
+  sql_table_name: `occasion-364007.looker_poc.c_orders` ;;
 
   # No primary key is defined for this view. In order to join this view in an Explore,
   # define primary_key: yes on a dimension that has no repeated values.
@@ -99,6 +99,7 @@ view: orders {
   }
 
   dimension: customer {
+    label: "Customer"
     type: number
     description: "[Foreign Key] customer"
     sql: ${TABLE}.customer ;;
@@ -110,6 +111,12 @@ view: orders {
     timeframes: [raw, time, date, week, month, quarter, year]
     datatype: datetime
     sql: ${TABLE}.date_placed ;;
+  }
+
+  dimension: defined_tracking_url {
+    type: string
+    description: "Defined Tracking URL"
+    sql: ${TABLE}.defined_tracking_url ;;
   }
 
   dimension: delivery_range {
