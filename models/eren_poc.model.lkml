@@ -54,22 +54,24 @@ explore: customer_data {
   }
 }
 
-explore: c_customers {
+#--------------------------------- PHASE 2 -------------------------------------------------------------------
+
+explore: c_offline_sales {
   label: "Eren Converse Data"
+
+  join: c_customers {
+    relationship: one_to_many
+    sql_on: ${c_offline_sales.sap_cust_id} = ${c_customers.customer_id} ;;
+  }
 
   join: c_orders {
     relationship: one_to_many
     sql_on: ${c_customers.pk} = ${c_orders.customer} ;;
   }
 
-  join: c_offline_sales {
-    relationship: one_to_many
-    sql_on: ${c_offline_sales.sap_cust_id} = ${c_customers.customer_id} ;;
-  }
-
   join: c_order_items {
     relationship: one_to_many
-    sql_on: ${c_order_items.pk} = ${c_orders.pk} ;;
+    sql_on: ${c_order_items.order} = ${c_orders.pk} ;;
   }
 
   join: c_products {
@@ -77,12 +79,5 @@ explore: c_customers {
     sql_on: ${c_products.pk} = ${c_order_items.product};;
   }
 
-}
 
-explore: c_offline_sales {
-  label: "Offline Data"
-}
-
-explore: c_orders {
-  label: "Online Data"
 }
