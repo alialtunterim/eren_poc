@@ -71,6 +71,7 @@ view: c_offline_sales {
   }
 
   dimension: sap_cust_id {
+    primary_key: yes
     type: number
     sql: CAST (${TABLE}.SAP_CUST_ID AS INT64);;
   }

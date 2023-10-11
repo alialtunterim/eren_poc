@@ -79,5 +79,4 @@ explore: c_offline_sales {
     sql_on: ${c_products.pk} = ${c_order_items.product};;
   }
 
-
 }
