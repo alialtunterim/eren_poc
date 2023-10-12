@@ -34,11 +34,27 @@ view: c_products {
     sql: ${TABLE}.attributes ;;
   }
 
+  dimension: online_segment1 {
+    type: string
+    sql: json_value(${TABLE}.attributes['integration_model']) ;;
+  }
+
   dimension: attributes_kwargs {
     type: string
     description: "Attributes kwargs"
     sql: ${TABLE}.attributes_kwargs ;;
   }
+
+  dimension: ana_grup {
+    type: string
+    sql: json_value(${TABLE}.attributes_kwargs['integration_urun_ana_grup']['label'])  ;;
+  }
+
+  dimension: alt_grup {
+    type: string
+    sql: json_value(${TABLE}.attributes_kwargs['integration_alt_grup']['label']) ;;
+  }
+
 
   dimension: base_code {
     type: string

@@ -76,7 +76,8 @@ explore: c_offline_sales {
 
   join: c_products {
     relationship: many_to_one
-    sql_on: ${c_products.pk} = ${c_order_items.product};;
+    sql_on: ${c_products.pk} = ${c_order_items.product}
+    and ${c_offline_sales.segment1} = ${c_products.online_segment1}
+    ;;
   }
-
 }
