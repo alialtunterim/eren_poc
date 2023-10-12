@@ -41,6 +41,7 @@ view: c_offline_sales {
   # Click on the type parameter to see all the options in the Quick Help panel on the right.
 
   measure: total_kdv_dahil_tutar {
+    label: "Total Sales"
     type: sum
     value_format: "#,##0"
     sql: ${kdv_dahil_tutar} ;;  }

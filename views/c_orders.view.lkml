@@ -22,8 +22,11 @@ view: c_orders {
   # Click on the type parameter to see all the options in the Quick Help panel on the right.
 
   measure: total_amount {
+    label: "Total Sales"
     type: sum
+    value_format: "#,##0"
     sql: ${amount} ;;  }
+
   measure: average_amount {
     type: average
     sql: ${amount} ;;  }

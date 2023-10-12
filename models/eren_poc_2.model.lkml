@@ -27,10 +27,10 @@ explore: c_offline_sales {
 
 }
 
-explore: c_order_items {
+explore: c_orders {
   label: "Eren Online Data"
 
-  join: c_orders{
+  join: c_order_items{
     relationship: many_to_one
     sql_on: ${c_order_items.order} = ${c_orders.pk} ;;
   }

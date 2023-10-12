@@ -47,6 +47,7 @@ view: c_products {
 
   dimension: ana_grup {
     type: string
+    drill_fields: [alt_grup,name]
     sql: json_value(${TABLE}.attributes_kwargs['integration_urun_ana_grup']['label'])  ;;
   }
 
