@@ -20,6 +20,11 @@ view: c_customers {
     label: "SAP Cust ID"
     type: number
     sql: CAST(json_value(${TABLE}.attributes['customer_id']) AS INT64) ;;
+
+    link: {
+      label: "Customer Detail"
+      url: "https://komtas.cloud.looker.com/dashboards/118?Sap%20Cust%20ID={{ value }}"
+    }
   }
 
   dimension: attributes_kwargs {

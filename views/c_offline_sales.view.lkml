@@ -75,6 +75,11 @@ view: c_offline_sales {
     primary_key: yes
     type: number
     sql: CAST (${TABLE}.SAP_CUST_ID AS INT64);;
+
+    link: {
+      label: "Customer Detail"
+      url: "https://komtas.cloud.looker.com/dashboards/118?Sap%20Cust%20ID={{ value }}"
+    }
   }
 
   dimension: segment1 {

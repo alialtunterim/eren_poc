@@ -60,17 +60,17 @@ explore: c_offline_sales {
   label: "Eren Converse Data"
 
   join: c_customers {
-    relationship: one_to_many
+    relationship: many_to_one
     sql_on: ${c_offline_sales.sap_cust_id} = ${c_customers.customer_id} ;;
   }
 
   join: c_orders {
-    relationship: one_to_many
+    relationship: many_to_one
     sql_on: ${c_customers.pk} = ${c_orders.customer} ;;
   }
 
   join: c_order_items {
-    relationship: one_to_many
+    relationship: many_to_one
     sql_on: ${c_order_items.order} = ${c_orders.pk} ;;
   }
 
