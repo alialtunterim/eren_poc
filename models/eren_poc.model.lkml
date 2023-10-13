@@ -12,7 +12,7 @@ datagroup: eren_poc_default_datagroup {
   max_cache_age: "24 hour"
 }
 
-label: "POC Eren Perakende"
+label: "POC Eren Perakende 1"
 
 persist_with: eren_poc_default_datagroup
 
