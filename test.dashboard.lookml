@@ -1,7 +1,7 @@
 
 - dashboard: 01__satsipari_zet_dashboard
   title: 01 - Satış&Sipariş Özet Dashboard
-  layout: newspaper
+  layout: newspaperr
   preferred_viewer: dashboards-next
   description: ''
   filters_bar_collapsed: true
