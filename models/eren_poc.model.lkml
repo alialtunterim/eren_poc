@@ -13,7 +13,7 @@ datagroup: eren_poc_default_datagroup {
 }
 
 label: "POC Eren Perakende 1"
-
+#test test test
 persist_with: eren_poc_default_datagroup
 
 # Explores allow you to join together different views (database tables) based on the
